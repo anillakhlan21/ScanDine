@@ -2,7 +2,7 @@
 # Format: file_path @github-username
 
 # Assign reviewers for the whole repo
-* @anillakhlan21
+* @anillakhlan
 
 # Assign specific reviewers for certain folders
 # apps/api/ @backend-dev
