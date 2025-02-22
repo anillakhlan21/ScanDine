@@ -61,3 +61,21 @@ jobs:
             -Dsonar.projectKey=${{secrets.SONAR_PROJECT_KEY}} \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm' # Change to 'pnpm' or 'yarn' if needed
+
+      - name: Install dependencies
+        run: npm install # Change to pnpm install / yarn install if needed
+
+      - name: Run unit tests with Nx
+        run: npx nx run-many --target=test --all
