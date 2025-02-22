@@ -2,12 +2,10 @@ import express from 'express';
 import mongoose from 'mongoose';
 import qrRoutes from './routes/qr.routes';
 import { setupSwagger } from './config/swagger';
-import cors from "cors";
 const host = process.env.HOST ?? 'localhost';
 const port = process.env.PORT ? Number(process.env.PORT) : 5000;
 
 const app = express();
-app.use(cors());
 
 setupSwagger(app);
 
