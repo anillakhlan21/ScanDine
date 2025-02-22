@@ -1,0 +1,10 @@
+# Automatically assign reviewers based on file/directory changes
+# Format: file_path @github-username
+
+# Assign reviewers for the whole repo
+* @anillakhlan21
+
+# Assign specific reviewers for certain folders
+# apps/api/ @backend-dev
+# apps/frontend/ @frontend-dev
+# libs/shared/ @all-team
