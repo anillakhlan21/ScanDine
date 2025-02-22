@@ -1,8 +1,8 @@
-import { Request, Response } from 'express';
+import { NextFunction, Request, Response } from 'express';
 import { QRService } from '../services/qr.service';
 
 export class QRController {
-  static async generateQRCode(req: Request, res: Response) {
+  static async generateQRCode(req: Request, res: Response, next: NextFunction) {
     try {
       const { tableId } = req.params;
       if (!tableId) {
@@ -12,7 +12,7 @@ export class QRController {
       const qrCodeUrl = await QRService.generateQRCode(tableId);
       return res.status(200).json({ qrCodeUrl });
     } catch (error) {
-      return res.status(500).json({ message: error.message });
+      next(error);
     }
   }
 }
