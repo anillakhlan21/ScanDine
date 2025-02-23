@@ -1,6 +1,6 @@
 import { getGreeting } from '../support/app.po';
 
-describe('scan-dine-kitchen-e2e', () => {
+describe('scan-dine-order-e2e', () => {
   beforeEach(() => cy.visit('/'));
 
   it('should display welcome message', () => {

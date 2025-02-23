@@ -1,8 +1,8 @@
 export default {
-  displayName: 'scan-dine-kitchen',
-  preset: '../jest.preset.js',
+  displayName: 'scan-dine-order',
+  preset: '../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory: '../coverage/scan-dine-kitchen',
+  coverageDirectory: '../../coverage/apps/scan-dine-order',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

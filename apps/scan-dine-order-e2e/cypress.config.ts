@@ -6,10 +6,10 @@ export default defineConfig({
     ...nxE2EPreset(__filename, {
       cypressDir: 'src',
       webServerCommands: {
-        default: 'npx nx run scan-dine-kitchen:serve',
-        production: 'npx nx run scan-dine-kitchen:serve-static',
+        default: 'npx nx run scan-dine-order:serve',
+        production: 'npx nx run scan-dine-order:serve-static',
       },
-      ciWebServerCommand: 'npx nx run scan-dine-kitchen:serve-static',
+      ciWebServerCommand: 'npx nx run scan-dine-order:serve-static',
       ciBaseUrl: 'http://localhost:4200',
     }),
     baseUrl: 'http://localhost:4200',
