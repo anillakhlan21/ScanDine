@@ -1,0 +1,27 @@
+.nav-links{
+    list-style: none;
+    display: flex;
+    justify-content: right;
+}
+
+.nav-item{
+   margin: 10px;
+}
+
+.nav-container{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.header-container{
+    background-color: antiquewhite;
+}
+
+.nav-right{
+    
+}
+
+.button{
+    padding: 30px;
+}
