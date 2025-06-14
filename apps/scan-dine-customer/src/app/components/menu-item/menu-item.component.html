@@ -1,0 +1,57 @@
+<div class="menu-card">
+  <div class="image-wrapper">
+    <img [src]="item.image || 'assets/placeholder.jpg'" alt="{{ item.name }}" class="dish-image"
+      (error)="onImgError($event)" />
+    <span class="veg-badge" [title]="item.veg ? 'Vegetarian' : 'Non-Vegetarian'"
+      [ngClass]="item.veg ? 'veg' : 'nonveg'">
+      <ng-container *ngIf="item.veg; else nonveg">🟢</ng-container>
+      <ng-template #nonveg>🔴</ng-template>
+    </span>
+    <span class="spicy-badge" [title]="'Spicy level: ' + item.spicy | titlecase">
+      <ng-container [ngSwitch]="item.spicy">
+        <span *ngSwitchCase="'none'">🌶️❌</span>
+        <span *ngSwitchCase="'mild'">🌶️</span>
+        <span *ngSwitchCase="'medium'">🌶️🌶️</span>
+        <span *ngSwitchCase="'hot'">🌶️🌶️🌶️</span>
+        <span *ngSwitchDefault>🌶️?</span>
+      </ng-container>
+    </span>
+  </div>
+  <div class="dish-info">
+    <h3>{{ item.name }}</h3>
+    <div class="dish-desc">{{ item.description }}</div>
+    <div class="dish-ingredients">
+      <strong>Ingredients:</strong> {{ item.ingredients }}
+    </div>
+    <div class="prep-time">
+      <span>⏱️ {{ item.prepTime }} min</span>
+    </div>
+    <div class="dish-rating">
+      <span class="stars">
+        <ng-container *ngFor="let s of getStars(); let i = index">
+          <span [ngClass]="isStarFilled(i) ? 'star-filled' : 'star-empty'">★</span>
+        </ng-container>
+      </span>
+      <span class="rating-value">{{ item.rating }}</span>
+      <span class="review-count">({{ item.reviews }} reviews)</span>
+    </div>
+    <div class="dish-price">₹{{ item.price }}</div>
+    <div class="add-cart">
+      <div class="qty-group">
+        <button class="qty-btn" (click)="decrement()" [disabled]="item.quantity <= 1">−</button>
+        <input
+          type="number"
+          min="1"
+          class="qty-input"
+          [(ngModel)]="item.quantity"
+          [value]="item.quantity"
+          (change)="validateQuantity()"
+        />
+        <button class="qty-btn" (click)="increment()">+</button>
+      </div>
+      <button class="add-btn" (click)="onAdd()" [disabled]="item.quantity < 1">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>

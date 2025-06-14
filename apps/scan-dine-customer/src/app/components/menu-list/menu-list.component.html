@@ -1,0 +1,11 @@
+<div class="menu-list-section">
+  <h2 class="menu-title">Menu</h2>
+  <p class="menu-subtitle">Discover our delicious dishes and add your favorites to the cart!</p>
+  <div class="menu-grid">
+    <app-menu-item
+      *ngFor="let item of menu"
+      [item]="item"
+      (addToCart)="onAdd($event)">
+    </app-menu-item>
+  </div>
+</div>

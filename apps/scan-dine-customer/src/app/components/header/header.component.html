@@ -1,0 +1,15 @@
+<header class="app-header">
+  <div class="header-container">
+    <div class="brand">
+      <img src="assets/logo.jpeg" alt="ScanDine Logo" class="logo" />
+      <span class="brand-name">ScanDine</span>
+    </div>
+    <nav class="nav-container">
+      <a routerLink="/menu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Menu</a>
+      <a routerLink="/checkout" routerLinkActive="active">Checkout</a>
+      <a routerLink="/status" routerLinkActive="active">Order Status</a>
+      <!-- Future: <a routerLink="/profile" routerLinkActive="active">Profile</a> -->
+      <!-- Future: <span class="cart-icon"><i class="fa fa-shopping-cart"></i></span> -->
+    </nav>
+  </div>
+</header>

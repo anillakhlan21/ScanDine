@@ -1,0 +1,19 @@
+<div class="order-status">
+  <h2>Order Status</h2>
+  <div *ngIf="orderId; else noOrder">
+    <p><strong>Order ID:</strong> {{ orderId }}</p>
+    <p>
+      <strong>Status:</strong>
+      <span [ngClass]="status.toLowerCase()">{{ status }}</span>
+    </p>
+    <ng-container [ngSwitch]="status">
+      <p *ngSwitchCase="'Pending'">Your order has been placed and is waiting to be prepared.</p>
+      <p *ngSwitchCase="'Preparing'">Your food is being prepared.</p>
+      <p *ngSwitchCase="'Ready'">Your order is ready to be served!</p>
+      <p *ngSwitchCase="'Served'">Enjoy your meal!</p>
+    </ng-container>
+  </div>
+  <ng-template #noOrder>
+    <p>No order found. Please place an order first.</p>
+  </ng-template>
+</div>

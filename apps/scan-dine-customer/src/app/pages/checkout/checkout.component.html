@@ -1,0 +1,17 @@
+<div class="checkout">
+  <h2>Checkout</h2>
+  <div *ngIf="!orderPlaced; else confirmation">
+    <ul>
+      <li *ngFor="let item of items">
+        {{ item.name }} x{{ item.quantity }} — ₹{{ item.price * item.quantity }}
+      </li>
+    </ul>
+    <div class="checkout-total">
+      <strong>Total: ₹{{ total }}</strong>
+    </div>
+    <button (click)="placeOrder()">Place Order</button>
+  </div>
+  <ng-template #confirmation>
+    <p>Your order has been placed! Thank you.</p>
+  </ng-template>
+</div>
