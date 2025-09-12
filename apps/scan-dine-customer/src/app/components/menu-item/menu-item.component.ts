@@ -33,7 +33,7 @@ export class MenuItemComponent {
   }
 
   onImgError(event: Event) {
-    (event.target as HTMLImageElement).src = 'assets/placeholder.jpg';
+    console.log(event)
   }
 
   getStars(): number[] {

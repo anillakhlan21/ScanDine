@@ -1,6 +1,6 @@
 <div class="menu-card">
   <div class="image-wrapper">
-    <img [src]="item.image || 'assets/placeholder.jpg'" alt="{{ item.name }}" class="dish-image"
+    <img [src]="item.image" alt="{{ item.name }}" class="dish-image"
       (error)="onImgError($event)" />
     <span class="veg-badge" [title]="item.veg ? 'Vegetarian' : 'Non-Vegetarian'"
       [ngClass]="item.veg ? 'veg' : 'nonveg'">

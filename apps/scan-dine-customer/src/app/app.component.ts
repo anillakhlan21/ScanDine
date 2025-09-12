@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
-import { OrderStatusComponent } from './components/order-status/order-status.component';
 
 @Component({
-  imports: [RouterModule, HeaderComponent, OrderStatusComponent],
+  imports: [RouterModule, HeaderComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
