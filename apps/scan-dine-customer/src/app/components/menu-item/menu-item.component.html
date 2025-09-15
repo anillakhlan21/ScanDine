@@ -38,19 +38,19 @@
     <div class="dish-price">₹{{ item.price }}</div>
     <div class="add-cart">
       <div class="qty-group">
-        <button class="qty-btn" (click)="decrement()" [disabled]="item.quantity <= 1">−</button>
+        <button class="qty-btn" (click)="decrement()" [disabled]="selectedQuantity <= 0">−</button>
         <input
           type="number"
           min="1"
           class="qty-input"
-          [(ngModel)]="item.quantity"
-          [value]="item.quantity"
+          [(ngModel)]="selectedQuantity"
+          [value]="selectedQuantity"
           (change)="validateQuantity()"
         />
         <button class="qty-btn" (click)="increment()">+</button>
       </div>
-      <button class="add-btn" (click)="onAdd()" [disabled]="item.quantity < 1">
-        Add to Cart
+      <button class="add-btn" (click)="onAdd()" [disabled]="isAddToCartBtnDisabled()">
+        {{quantityInCart > 0 ? 'Update Cart' : 'Add to Cart'}}
       </button>
     </div>
   </div>
